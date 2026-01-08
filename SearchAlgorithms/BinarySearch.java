@@ -14,9 +14,7 @@ public class BinarySearch {
 			System.out.print(ele + " ");
 		}
 
-
 		binarySearch.search(array, 6);
-
 		
 	}
 
