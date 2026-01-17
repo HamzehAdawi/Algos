@@ -5,8 +5,27 @@ public class BreadthFirstSearch {
 	BreadthFirstSearch() {}
 
 	//Use queue
-	public void search(List<List<Integer>> node, ) {
+	public void search(List<List<Integer>> node ) {
+		int n = node.size();
+		boolean[] visited = new boolean[n];
 
+		int ele = 1;
+		Queue<Integer> queue = new LinkedList<>();
+		visited[ele] = true;
+		queue.add(ele);
+
+
+		while (!queue.isEmpty()) {
+			int curr = queue.poll();
+			System.out.println(curr);
+
+			for (int i: node.get(curr)) {
+				if (!visited[i]) {
+					visited[i] = true;
+					queue.add(i);
+				}
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -28,7 +47,7 @@ public class BreadthFirstSearch {
 		boolean[] visited = new boolean[n];
 
 		BreadthFirstSearch breadFirstSearch = new BreadthFirstSearch();
-		breadFirstSearch.search(nodes, visited, 1);
+		breadFirstSearch.search(nodes);
 														
 	}
 }
