@@ -5,6 +5,7 @@ public class DepthFirstSearch {
 	DepthFirstSearch() {}
 
 	public void search(List<List<Integer>> graph, boolean[] visited, int node) {
+
 		visited[node] = true;
 		System.out.println(node);
 
