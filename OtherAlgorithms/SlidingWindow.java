@@ -1,7 +1,5 @@
 public class SlidingWindow {
 
-	// Sliding window algorithm with the objective to
-	// print the contigous sequences with the sum of 8.
 	public void slide(int[] arr, int targetSum) {
 
 		int left = 0;
