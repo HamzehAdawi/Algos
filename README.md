@@ -1,1 +1,2 @@
-A personal journey to practice learn the entire collection of algorithms, at least 1 a day. 
+A personal repository with a goal to implement and review as many algorithms as possible, daily. 
+
