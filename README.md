@@ -1,1 +1,5 @@
-A personal journey to practice learn the entire collection of algorithms, at least 1 a day. 
+A personal repository to implement and review as many algorithms as possible, daily. 
+Java and C++. 
+
+
+
