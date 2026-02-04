@@ -30,24 +30,15 @@ class SelectionSort {
 int main() {
 
 	SelectionSort selectionSort;
-	//Vecs vecs;
+	Vecs vecs;
 		
 	vector<int> vec = {3, 32, 1, 34, 767};
 
-	//vecs.printVector(vec);
-	
-	for (size_t i = 0; i < vec.size(); i++) {
-		cout << vec[i] << " ";
-	}
-
+	vecs.printVector(vec);
 	cout << endl;
 
 	selectionSort.sort(vec);
 
-	
-	for (size_t i = 0; i < vec.size(); i++) {
-		cout << vec[i] << " ";
-	}
-	
+	vecs.printVector(vec);	
 	cout << endl;
 }

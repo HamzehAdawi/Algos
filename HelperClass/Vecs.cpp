@@ -13,6 +13,3 @@ void Vecs::printVector(vector<int> vec) {
 	cout << vec[vec.size() - 1] << "] " << endl;
 }
 
-int main() {
-	
-}
