@@ -26,7 +26,7 @@ public class Dijkstra {
 	        if (u == -1) break;
 	        visited[u] = true;
 	
-	        
+	        //v is the node number and w is the node distance
 	        for (int[] edge : adj.get(u)) {
 	            int v = edge[0];
 	            int w = edge[1];
