@@ -27,6 +27,20 @@ public:
 		dfs(node->left);
 		dfs(node->right);	
 	}
+
+	bool hasPathSum(Node* root, int target) {
+
+		if (root == NULL) {
+			return false; 
+		}
+
+		if (root->left && root->right) {
+			return target - root->value == 0;
+		}
+
+		target -= root->value;
+		return hasPathSum(root->left, target) || hasPathSum(root->right, target);
+	}
 };
 
 int main() {
