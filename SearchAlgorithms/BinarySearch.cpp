@@ -44,6 +44,29 @@ public:
 		}
 
 		return -1;
+	}
+
+	// Binary Search Insert Position. Will tell you where to add
+	// an element if the target is not present.
+	int insertPosition(vector<int>& nums, int target) {
+		
+		int left = 0;
+		int right = nums.size() - 1;
+
+		while (left <= right) {
+
+			int mid = left + (right - left) / 2;
+
+			if (nums[mid] == target) { return mid; }
+
+			if (target > nums[mid] ) {
+				left = mid + 1;
+			} else {
+				right = mid - 1;
+			}
+		}
+
+		return left;		
 	}	
 	
 };
@@ -52,21 +75,21 @@ int main() {
 	
 	BinarySearch binarySearch;
 
-	vector<int> vec = {3, 5, 7, 23, 43, 100};
+	vector<int> vec = {1, 3, 5, 6};
 
 	//int start = 0;
 	//int end = vec.size() - 1;
-	int target = 23; 
+	int target = 5; 
 
 	//int ans = binarySearch.searchRecursive(vec, target, start, end);
 
-	int ans = binarySearch.search(vec, target);
+	int ans = binarySearch.insertPosition(vec, target);
 	
-	for (size_t i =0; i < vec.size(); i++) {
+	//for (size_t i =0; i < vec.size(); i++) {
 
-		cout << vec[i]<< " ";
+	//	cout << vec[i]<< " ";
 		
-	}
+	//}
 	
 	// cout << "\nBinary search on vector for element " << target << endl;
 	// cout << ans << endl;
