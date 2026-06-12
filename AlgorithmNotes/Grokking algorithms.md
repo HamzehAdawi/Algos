@@ -32,3 +32,5 @@
 		return -1;
 	}
 ```
+
+Time complexity: O(logn)
