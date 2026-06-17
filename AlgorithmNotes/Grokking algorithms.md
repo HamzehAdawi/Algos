@@ -64,10 +64,20 @@ Space complexity: O(n)
 - You can think of computer memory as a gigantic set of drawers. At each drawer there is an address in memory. An example of a memory address looks like: **fe0ffeeb** and stores an item like an int. 
 - **fe0ffeeb** is the address slot in memory 
 
-##### Arrays vs Linked Lists
-- *Arrays* 
-	- store their elements [contiguously]{Arranged next to each other without gaps.}
-	- The downside is the size is set upon creating, you cannot add another element if the array is not big enough. Linked Lists solve this issue. 
+##### `Arrays vs Linked Lists 
+- Arrays 
+	- Store elements [contiguously]{Arranged next to each other without gaps.} in memory, cannot be anywhere but next to each other  
+	- Analogy: Egg carton 
+	- Downside: the size is set upon creating, you cannot add another element if the array is not big enough. Linked Lists solve this issue.
+	- Reading: O(1) Instant lookup. ex. arr[5] gives you the element at 5th index, immediately 
+	- Insertion: O(n) if it's full, you must add all elements to another array as size is fixed. 
+
 - Linked Lists
-	- Elements can by anywhere in memory. Do not have to store elements contiguously.
-	- Each item stores a address of the next item in the list. They are all linked together with each pointing to a random memory address of the next element. 
+	- Elements can by anywhere in memory. Not stored contiguously. Instead, they're linked together through random memory addresses with each one pointing to the location of the next element (last element points to **null**).
+	- Analogy: Like a treasure hunt where you go to find the first item at specific address. You find instructions that tell you where the next item is, and so you go to that address and find the address to the next item, and so on.
+	- Downside: you must always iterate from the beginning to get to the element you are searching for. Takes longer.
+	- Reading: O(n)
+	- Insertion: O(1)
+	
+- [[ArrayVsLinkedList.png|Array vs Linked List]]
+

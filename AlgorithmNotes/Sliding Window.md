@@ -22,3 +22,37 @@ public int dynamicWindow(int[] arr, int target) {
 }
 
 ```
+
+
+#### `Longest Sub Array of 1s #1493:
+```java
+class Solution {
+    public int longestSubarray(int[] nums) {
+
+        int start = 0;
+        int longest = 0;
+        int zeroCount = 0;  
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] == 0) {
+                zeroCount++;
+            }
+
+            while (zeroCount > 1) {
+            
+                if (nums[start] == 0) {
+                    zeroCount--;
+                }
+                
+                start++;
+            }
+            
+            longest = Math.max(longest, i - start);
+        }
+        return longest;
+    }
+}
+
+```
+![[Longest SubArrays of 1s]]
