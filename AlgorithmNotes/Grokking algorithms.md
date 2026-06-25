@@ -1,7 +1,9 @@
 
-### Chapter 1 Introduction to Algorithms
+<br>
+
+#### **Chapter 1 Introduction to Algorithms** 
 ---
-##### `Big O
+##### `Big O`
 **Big O notation** is a way to tell the number of operations an algorithm will make. In other words, it's how computer scientist express time and space complexity of an algorithm. 
 - Algorithm's times are measured in terms of growth of an algorithm not in seconds. 
 - For example: O(n)
@@ -20,7 +22,7 @@
 
 	[[BigOsGraphed.jpg |Big O's Graphed Here]]
 
-##### `Binary Search
+##### `Binary Search`
 - A good analogy for binary search is the way we naturally search a dictionary. Open to about the middle then turn multiple pages either left or right wherever the first letter of the word is alphabetically and repeat until its found. 
 	- Binary search must be used on a **sorted** list or array
 	- At worst time binary search is logarithmic meaning O(logn)
@@ -28,7 +30,7 @@
 		- linear search takes O(n), max 100 steps
 		- binary search takes O(logn) max 4 steps
 
-`Implementation: 
+`Implementation:` 
 ```java
 	public int binarySearch(int[] arr, int target) {
 		
@@ -57,20 +59,22 @@
 Time complexity: O(logn)
 Space complexity: O(n) 
 
+<br>
 
-### Chapter 2 Selection Sort
+#### **Chapter 2 Selection Sort**
 ---
-#### `How memory works
+##### `How memory works`
 - You can think of computer memory as a gigantic set of drawers. At each drawer there is an address in memory. An example of a memory address looks like: **fe0ffeeb** and stores an item like an int. 
 - **fe0ffeeb** is the address slot in memory 
 
-##### `Arrays vs Linked Lists 
+##### `Arrays vs Linked Lists` 
 - Arrays 
 	- Store elements [contiguously]{Arranged next to each other without gaps.} in memory, cannot be anywhere but next to each other  
 	- Analogy: Egg carton 
 	- Downside: the size is set upon creating, you cannot add another element if the array is not big enough. Linked Lists solve this issue.
 	- Reading: O(1) Instant lookup. ex. arr[5] gives you the element at 5th index, immediately 
-	- Insertion: O(n) if it's full, you must add all elements to another array as size is fixed. 
+	- Insertion: O(n) if it's full, you must add all elements to another array as size is fixed
+	- Deletion: O(n) 
 
 - Linked Lists
 	- Elements can by anywhere in memory. Not stored contiguously. Instead, they're linked together through random memory addresses with each one pointing to the location of the next element (last element points to **null**).
@@ -78,6 +82,69 @@ Space complexity: O(n)
 	- Downside: you must always iterate from the beginning to get to the element you are searching for. Takes longer.
 	- Reading: O(n)
 	- Insertion: O(1)
+	- Deletion: O(1)
 	
 - [[ArrayVsLinkedList.png|Array vs Linked List]]
+
+##### `Selection Sort`
+
+`implementation:`
+```java
+public void selectionSort(int[] arr) {
+	int min = 0;
+	
+	for (int i = 0; i < arr.length; i++) {
+		
+		min = i;
+		for (int j = i; j < arr.length; j++) {
+			if (arr[j] < arr[min]) {
+				min = j;
+			}
+		}
+		
+		int temp = arr[i];
+		arr[i] = arr[min];
+		arr[min] = temp;
+	}
+ }
+```
+
+<br>
+
+#### **Chapter 3 Recursion**
+---
+
+**Recursion** - a function which calls itself and has a terminating condition. 
+- It's not always more efficient to implement recursion but it makes it much easier to understand as the programmer because loops can get too much. 
+- An analogy in the book is you find a box in the attic which in it contains more boxes and those boxes contain boxes etc.. In one of the boxes there is a key you are looking for. The code below exemplifies a *recursive algorithm* to solve this problem. 
+
+`Implementation`
+```java
+public item lookForKey(Box box) {
+	for (Item item: box) {
+		if (item.isBox()) {
+			return lookForKey(item) // <- Recursive call 
+		} else if (item.isKey()) {
+			return item; // key found 	
+		}
+	}
+	return null;
+}
+```
+
+Base case vs Recursive case:
+- **recursive case** is the recursion portion of your function. When the function calls itself. 
+- **base case** is also known as the terminating clause is the condition needed to be met to stop the recursion, otherwise it runs forever. 
+- Other way to think about it, if the case is at the base stop. If the case is not recurse. 
+```java
+public void countdown(int i) {
+	System.out.println(i);
+	
+	if (i <= 1) {
+		return; // base case
+	} else {
+		countdown(i-1); // recursive case
+	}
+}
+```
 
