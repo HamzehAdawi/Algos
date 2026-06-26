@@ -106,7 +106,7 @@ public void selectionSort(int[] arr) {
 		arr[i] = arr[min];
 		arr[min] = temp;
 	}
- }
+
 ```
 
 <br>
@@ -148,3 +148,54 @@ public void countdown(int i) {
 }
 ```
 
+##### `Call Stack`
+
+The **stack** data structure is like a stack of pancakes. 
+- First in Last out or Last in first out 
+
+*call stack*   
+- When you call a function the compiler adds it to the call stack. It the continues down, line by line executing each. If there is another function call within your function, it adds onto to the call stack. It will execute that call to its said function in its entirety then *pop* it off the call stack. When its done it goes back to where it left off in the original function to proceed down line by line. This is the **call stack**.   
+- [[Call Stack.png|Call Stack visualized]]
+
+
+
+#### **Chapter 4 Quicksort**
+---
+
+##### `Divide and Conquer`
+- D & C is more than just an algorithm it's a way to think about a problem.
+- Broken down into 2 steps.
+	1. Figure out a simple case as the *base case*
+	2. Figure out how to reduce your problem and get to the base case
+- Analogy is the finding the largest square size for a plot of land
+
+##### `Quick Sort Algorithm`
+1. pick a pivot 
+2. partition the array into two sub arrays, one smaller than the pivot and the other larger than the pivot.
+3. call quick sort on the sub arrays 
+
+```java
+public void quickSort(int[] arr, int start, int end) {
+	
+	if (start < end) {
+		int pivot = partition(arr, start, end);
+		
+		quickSort(arr, start, pivot - 1);
+		quickSort(arr, pivot + 1, end);	
+	}
+}
+
+public int partition(int[] arr, int start, int end) {
+	
+	int pivot = arr[end];
+	int i = start;
+	for ( int j = start; j < end; j++) {
+		if (arr[j] < pivot) {
+			swap(j, i++);
+		} 	
+	}
+	
+	swap(i, end);
+	return i;
+}	
+```
