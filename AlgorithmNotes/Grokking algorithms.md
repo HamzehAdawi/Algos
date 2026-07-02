@@ -1,7 +1,4 @@
-
-<br>
-
-#### **Chapter 1 Introduction to Algorithms** 
+Chapter 1 Introduction to Algorithms** 
 ---
 ##### `Big O`
 **Big O notation** is a way to tell the number of operations an algorithm will make. In other words, it's how computer scientist express time and space complexity of an algorithm. 
@@ -158,7 +155,6 @@ The **stack** data structure is like a stack of pancakes.
 - [[Call Stack.png|Call Stack visualized]]
 
 
-
 #### **Chapter 4 Quicksort**
 ---
 
@@ -199,3 +195,22 @@ public int partition(int[] arr, int start, int end) {
 	return i;
 }	
 ```
+
+[[BigOSheet.png|Big O quick cheat sheet]]
+
+ Summary:
+ - *Divide and conquer* works by breaking a problem down into smaller and smaller pieces. If you're using d & c on a list, the base case is probably an empty array or an array with one element. 
+ - If you're implementing quicksort, choose a random element as the pivot. The average rune time of quicksort is O(n log n)
+ - Given two algorithms with the same big O running time, one can be consistently faster than the other. That's why quicksort is faster than merge sort. 
+ - The constant almost never matters for simple search vs binary search because O (n log n) is so much faster than O(n) when your list gets big
+
+
+#### **Chapter 5 Hash Tables**
+---
+Hash tables are an excellent data structure and often time used because of their instant look up time. O(1).
+
+`Hash Functions` 
+- A function where you put in a string (string here mean some kind of data) and you get back a number. 
+- Hash functions map strings to numbers
+- Types of hash functions: *HashMap, maps, dictionaries,* and *associative arrays* 
+- Hash tables technically use an array to store data which is why they are O(1)
