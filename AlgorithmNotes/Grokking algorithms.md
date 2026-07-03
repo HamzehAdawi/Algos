@@ -213,4 +213,6 @@ Hash tables are an excellent data structure and often time used because of their
 - A function where you put in a string (string here mean some kind of data) and you get back a number. 
 - Hash functions map strings to numbers
 - Types of hash functions: *HashMap, maps, dictionaries,* and *associative arrays* 
-- Hash tables technically use an array to store data which is why they are O(1)
+- Hash tables technically use an array to store data which is why they are O(1) 
+- Downside to hash functions is collision. This happens when two different inputs produce the same output.
+ 
