@@ -1,4 +1,4 @@
-Chapter 1 Introduction to Algorithms** 
+#### **Chapter 1 | Introduction to Algorithms**
 ---
 ##### `Big O`
 **Big O notation** is a way to tell the number of operations an algorithm will make. In other words, it's how computer scientist express time and space complexity of an algorithm. 
@@ -58,7 +58,7 @@ Space complexity: O(n)
 
 <br>
 
-#### **Chapter 2 Selection Sort**
+#### **Chapter 2 | Selection Sort**
 ---
 ##### `How memory works`
 - You can think of computer memory as a gigantic set of drawers. At each drawer there is an address in memory. An example of a memory address looks like: **fe0ffeeb** and stores an item like an int. 
@@ -108,7 +108,7 @@ public void selectionSort(int[] arr) {
 
 <br>
 
-#### **Chapter 3 Recursion**
+#### **Chapter 3 | Recursion**
 ---
 
 **Recursion** - a function which calls itself and has a terminating condition. 
@@ -155,7 +155,7 @@ The **stack** data structure is like a stack of pancakes.
 - [[Call Stack.png|Call Stack visualized]]
 
 
-#### **Chapter 4 Quicksort**
+#### **Chapter 4 | Quicksort**
 ---
 
 ##### `Divide and Conquer`
@@ -205,9 +205,10 @@ public int partition(int[] arr, int start, int end) {
  - The constant almost never matters for simple search vs binary search because O (n log n) is so much faster than O(n) when your list gets big
 
 
-#### **Chapter 5 Hash Tables**
+#### **Chapter 5 | Hash Tables**
 ---
 Hash tables are an excellent data structure and often time used because of their instant look up time. O(1).
+- Under the hood of a hash table, a hash function converts keys into array indexes, and determines where data is put and grabbed.
 
 `Hash Functions` 
 - A function where you put in a string (string here mean some kind of data) and you get back a number. 
@@ -215,4 +216,15 @@ Hash tables are an excellent data structure and often time used because of their
 - Types of hash functions: *HashMap, maps, dictionaries,* and *associative arrays* 
 - Hash tables technically use an array to store data which is why they are O(1) 
 - Downside to hash functions is collision. This happens when two different inputs produce the same output.
- 
+- Caching or memorizing data is a great use case for hash functions and used a lot today
+
+`Downside to Hash Tables` 
+- **Collisions** 
+- Occurs when two *keys* get assigned the same slot in memory. 
+- Many different ways to deal with collisions. A solution to collisions is a linked list at the slot in memory. Makes the lookup slightly slower. 
+- Hash tables avoid collisions by having a **low load factor** and a good **hash function**. 
+
+
+
+#### **Chapter 6 | Breadth First Search**
+---
