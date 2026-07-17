@@ -228,3 +228,26 @@ Hash tables are an excellent data structure and often time used because of their
 
 #### **Chapter 6 | Breadth First Search**
 ---
+*BFS* - an algorithm to find out if a path exists between two points, say A and B and if so, find the shortest path from point A to point B.
+
+BFS facts
+- Explores *graphs*, not a graph in the sense of an X and Y coordinate. Instead a graph like this:
+	![[BFS Graph.png|290]]
+- BFS works by first searching the nodes closest to your starting point. It does so by utilizing the data structure known as a **queue**. It will add those closest first in the queue and naturally those further last. This works because queues are first in first out (FIFO).
+
+`Implementation of Breadth First Search`
+	Using the analogy finding a the closest person in your network that is a mango seller:
+		1. Keep a queue containing people to check
+		2. Pop a person of the queue
+		3. check if this person is a mango seller
+		4. *Yes?* You're done! or *No?* Add all their neighbors to the queue and repeat starting from step **2**.   
+		5. Loop 
+		6. If the queue is empty, there are no mango sellers in your network. 
+		
+```java
+	
+	Queue<Integer> queue = new ArrayDequeue<>();
+	
+		
+ 
+```
