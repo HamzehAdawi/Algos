@@ -246,8 +246,36 @@ BFS facts
 		
 ```java
 	
-	Queue<Integer> queue = new ArrayDequeue<>();
-	
+	private void bfs(ArrayDeque<String> queue, Map<String, List<String>> people) {
+		// To make sure we don't check the same person twice
+		Set<String> checkedPeople = new HashSet<>();
 		
+		//Iterate over the queue which contains persons of interest to check
+		while (!queue.isEmpty()) {
+			
+			String friend = queue.pop();
+			
+			if (!checkedPeople.contains(friend)) 
+			{	
+				if (falafelCertified.get(friend)) 
+				{		
+					System.out.println(friend + " is a certified falafel dealer!");
+					return;
+				} 
+
+				else 
+				{
+					for (String networkFriend: people.get(friend)) {
+						queue.add(networkFriend);
+					}
+					checkedPeople.add(friend);					
+				}
+			}  	
+		}
+		
+		
+		System.out.println("No certified falafel sellers in your network.");
+	}
+
  
 ```
